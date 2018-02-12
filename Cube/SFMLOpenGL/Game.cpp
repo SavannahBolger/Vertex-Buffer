@@ -1,4 +1,4 @@
-#include <Game.h>
+#include "Game.h"
 
 static bool flip;
 
@@ -38,7 +38,7 @@ typedef struct
 	float color[3];
 } Vertex;
 
-Vertex vertex[6];
+Vertex vertex[36];
 GLubyte triangles[6];
 
 /* Variable to hold the VBO identifier */
@@ -65,19 +65,139 @@ void Game::initialize()
 	vertex[2].coordinate[1] = 0.5f;
 	vertex[2].coordinate[2] = 0.0f;
 
-	//vertex[3].coordinate[0] = 0.5f; 
-	//vertex[3].coordinate[1] = 0.5f;  
-	//vertex[3].coordinate[2] = 0.0f;
+	vertex[3].coordinate[0] = 0.5f; 
+	vertex[3].coordinate[1] = 0.5f;  
+	vertex[3].coordinate[2] = 0.0f;
 
-	//vertex[4].coordinate[0] = 0.5f; 
-	//vertex[4].coordinate[1] = -0.5f;  
-	//vertex[4].coordinate[2] = 0.0f;
+	vertex[4].coordinate[0] = 0.5f; 
+	vertex[4].coordinate[1] = -0.5f;  
+	vertex[4].coordinate[2] = 0.0f;
 
-	//vertex[5].coordinate[0] = -0.5f; 
-	//vertex[5].coordinate[1] = -0.5f;  
-	//vertex[5].coordinate[2] = 0.0f;
+	vertex[5].coordinate[0] = -0.5f; 
+	vertex[5].coordinate[1] = -0.5f;  
+	vertex[5].coordinate[2] = 0.0f;
 
-	vertex[0].color[0] = 0.1f;
+	vertex[6].coordinate[0] = 0.5f;
+	vertex[6].coordinate[1] = -0.5f;
+	vertex[6].coordinate[2] = 0.0f;
+
+	vertex[7].coordinate[0] = 0.5f;
+	vertex[7].coordinate[1] = 0.5f;
+	vertex[7].coordinate[2] = 0.0f;
+
+	vertex[8].coordinate[0] = 0.5f;
+	vertex[8].coordinate[1] = 0.5f;
+	vertex[8].coordinate[2] = 1.0f;
+
+	vertex[9].coordinate[0] = 0.5f;
+	vertex[9].coordinate[1] = 0.5f;
+	vertex[9].coordinate[2] = 1.0f;
+	
+	vertex[10].coordinate[0] = 0.5f;
+	vertex[10].coordinate[1] = -0.5f;
+	vertex[10].coordinate[2] = 1.0f;
+
+	vertex[11].coordinate[0] = 0.5f;
+	vertex[11].coordinate[1] = -0.5f;
+	vertex[11].coordinate[2] = 0.0f;
+
+	vertex[12].coordinate[0] = 0.5f;
+	vertex[12].coordinate[1] = -0.5f;
+	vertex[12].coordinate[2] = 1.0f;
+
+	vertex[13].coordinate[0] = 0.5f;
+	vertex[13].coordinate[1] = 0.5f;
+	vertex[13].coordinate[2] = 1.0f;
+
+	vertex[14].coordinate[0] = -0.5f;
+	vertex[14].coordinate[1] = 0.5f;
+	vertex[14].coordinate[2] = 1.0f;
+
+	vertex[15].coordinate[0] = -0.5f;
+	vertex[15].coordinate[1] = 0.5f;
+	vertex[15].coordinate[2] = 1.0f;
+
+	vertex[16].coordinate[0] = -0.5f;
+	vertex[16].coordinate[1] = -0.5f;
+	vertex[16].coordinate[2] = 1.0f;
+
+	vertex[17].coordinate[0] = 0.5f;
+	vertex[17].coordinate[1] = -0.5f;
+	vertex[17].coordinate[2] = 1.0f;
+
+	vertex[18].coordinate[0] = -0.5f;
+	vertex[18].coordinate[1] = -0.5f;
+	vertex[18].coordinate[2] = 1.0f;
+
+	vertex[19].coordinate[0] = -0.5f;
+	vertex[19].coordinate[1] = 0.5f;
+	vertex[19].coordinate[2] = 1.0f;
+
+	vertex[20].coordinate[0] = -0.5f;
+	vertex[20].coordinate[1] = 0.5f;
+	vertex[20].coordinate[2] = 0.0f;
+
+	vertex[21].coordinate[0] = -0.5f;
+	vertex[21].coordinate[1] = 0.5f;
+	vertex[21].coordinate[2] = 0.0f;
+
+	vertex[22].coordinate[0] = -0.5f;
+	vertex[22].coordinate[1] = -0.5f;
+	vertex[22].coordinate[2] = 0.0f;
+
+	vertex[23].coordinate[0] = -0.5f;
+	vertex[23].coordinate[1] = -0.5f;
+	vertex[23].coordinate[2] = 1.0f;
+
+	vertex[24].coordinate[0] = -0.5f;
+	vertex[24].coordinate[1] = 0.5f;
+	vertex[24].coordinate[2] = 0.0f;
+
+	vertex[25].coordinate[0] = -0.5f;
+	vertex[25].coordinate[1] = 0.5f;
+	vertex[25].coordinate[2] = 1.0f;
+
+	vertex[26].coordinate[0] = 0.5f;
+	vertex[26].coordinate[1] = 0.5f;
+	vertex[26].coordinate[2] = 1.0f;
+
+	vertex[27].coordinate[0] = 0.5f;
+	vertex[27].coordinate[1] = 0.5f;
+	vertex[27].coordinate[2] = 1.0f;
+
+	vertex[28].coordinate[0] = 0.5f;
+	vertex[28].coordinate[1] = 0.5f;
+	vertex[28].coordinate[2] = 0.0f;
+
+	vertex[29].coordinate[0] = -0.5f;
+	vertex[29].coordinate[1] = 0.5f;
+	vertex[29].coordinate[2] = 0.0f;
+
+	vertex[30].coordinate[0] = -0.5f;
+	vertex[30].coordinate[1] = -0.5f;
+	vertex[30].coordinate[2] = 1.0f;
+
+	vertex[31].coordinate[0] = -0.5f;
+	vertex[31].coordinate[1] = -0.5f;
+	vertex[31].coordinate[2] = 0.0f;
+
+	vertex[32].coordinate[0] = 0.5f;
+	vertex[32].coordinate[1] = -0.5f;
+	vertex[32].coordinate[2] = 0.0f;
+
+	vertex[33].coordinate[0] = 0.5f;
+	vertex[33].coordinate[1] = -0.5f;
+	vertex[33].coordinate[2] = 0.0f;
+
+	vertex[34].coordinate[0] = 0.5f;
+	vertex[34].coordinate[1] = -0.5f;
+	vertex[34].coordinate[2] = 1.0f;
+
+	vertex[35].coordinate[0] = -0.5f;
+	vertex[35].coordinate[1] = -0.5f;
+	vertex[35].coordinate[2] = 1.0f;
+	
+	/*vertex[0].color[0] = 0.1f;
 	vertex[0].color[1] = 1.0f;
 	vertex[0].color[2] = 0.0f;
 
@@ -99,7 +219,7 @@ void Game::initialize()
 
 	vertex[5].color[0] = 0.6f;
 	vertex[5].color[1] = 1.0f;
-	vertex[5].color[2] = 0.0f;
+	vertex[5].color[2] = 0.0f;*/
 
 
 	triangles[0] = 0;   triangles[1] = 1;   triangles[2] = 2;
@@ -112,7 +232,7 @@ void Game::initialize()
 	glBindBuffer(GL_ARRAY_BUFFER, vbo[0]);
 
 	/* Upload vertex data to GPU */
-	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * 6, vertex, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * 36, vertex, GL_STATIC_DRAW);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 	glGenBuffers(1, &index);
@@ -152,6 +272,63 @@ void Game::update()
 	vertex[0].coordinate[1] += -0.0001f;
 	vertex[0].coordinate[2] += -0.0001f;
 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+	{
+		rotationAngle += 0.005f;
+
+		if (rotationAngle > 360.0f)
+		{
+			rotationAngle -= 360.0f;
+		}
+		for (int i = 0; i > 24; i++)
+		{
+			//osition[i] = position[i] * Matrix3::rotationZ(rotationAngle);
+		}
+		glRotatef(rotationAngle, 0, 0, 1); // Rotates the camera on z Axis
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
+	{
+		xRotation = Matrix3::rotationX(0.00174533);//angle set to 2 degrees
+		for (size_t i = 0; i < 3; i++)
+		{
+			currentPosition[i] = (xRotation * currentPosition[i]);
+		}
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y))
+	{
+		yRotation = Matrix3::rotationY(0.00174533);//angle set to 2 degrees
+		for (size_t i = 0; i < 3; i++)
+		{
+			currentPosition[i] = yRotation * currentPosition[i];
+		}
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+	{
+		zRotation = Matrix3::rotationZ(0.00174533);//angle set to 2 degrees
+		for (size_t i = 0; i < 3; i++)
+		{
+			currentPosition[i] = zRotation * currentPosition[i];
+		}
+	}
+	/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+	{
+		scale = true;
+	}
+	else
+	{
+		scale = false;
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::T))
+	{
+		translate = true;
+	}
+	else
+	{
+		translate = false;
+	}*/
 	cout << "Update up" << endl;
 }
 

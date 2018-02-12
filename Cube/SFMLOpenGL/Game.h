@@ -3,9 +3,8 @@
 #include <GL/wglew.h>
 #include <SFML/Window.hpp>
 #include <SFML/OpenGL.hpp>
-
-#include <Vector3.h>
-#include <Matrix3.h>
+#include "Vector3D.h"
+#include "Matrix3.h"
 
 using namespace std;
 using namespace sf;
@@ -28,5 +27,9 @@ private:
 	Clock clock;
 	Time elapsed;
 
+	Vector3D currentPosition[3];
 	float rotationAngle = 0.0f;
+	Matrix3 xRotation;//x axis rotation
+	Matrix3 yRotation;//y axis rotation
+	Matrix3 zRotation;//z axis rotation
 };
