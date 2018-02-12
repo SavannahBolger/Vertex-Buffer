@@ -8,7 +8,7 @@
 
 using namespace std;
 using namespace sf;
-using namespace gpp;
+//using namespace gpp;
 
 class Game
 {
@@ -27,9 +27,11 @@ private:
 	Clock clock;
 	Time elapsed;
 
-	Vector3D currentPosition[3];
+	Vector3D currentPosition[36];
 	float rotationAngle = 0.0f;
 	Matrix3 xRotation;//x axis rotation
 	Matrix3 yRotation;//y axis rotation
 	Matrix3 zRotation;//z axis rotation
+	Vector3D activeTranslation{ 0,0,0 };
+
 };
